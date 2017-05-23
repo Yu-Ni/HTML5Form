@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SelectionDirection.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function AD(){
+  			var control = document.forms[0]["text"];
+  			var Direction = control.selectionDirection;
+  			alert(Direction);
+  		}
+  	</script>
+    <form>
+    	<input type="text" name="text">
+    	<input type="button" value="点我" onclick="AD()">
+    </form>
+  </body>
+</html>
