@@ -12,6 +12,29 @@
   </head>
   
   <body>
+    <!-- figure元素以及figcaption元素 -->
+    <figure>
+    	<img src="img1.jpg" alt="美女">
+    	<figcaption>美女</figcaption>
+    </figure>
     
+    <!-- detail元素和summary元素 -->
+    <script type="text/javascript">
+    	function detail_onclick(detail){
+    		var p = document.getElementById("p");
+    		if(detail.open){
+    			p.style.visibility = "hidden";
+    		}else{
+    			p.style.visibility = "visible";
+    		}
+    	}
+    </script>
+    <detail id="dateil" onclick="detail_onclick(this)">
+    	<summary>速度与激情7</summary>
+    	<p id="p" style="visibility: hidden;">你好吗？这是为保罗特意打造的点看，看起来很不错</p>
+    </detail>
+    
+    <!-- mark元素 -->
+    <p>这是一段文字用来<mark>测试</mark>mark</p>
   </body>
 </html>

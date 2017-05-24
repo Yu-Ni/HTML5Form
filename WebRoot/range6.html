@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range6.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function cloneContent(){
+  			var div = document.getElementById("div");
+  			var rangeObj = document.createRange();
+  			rangeObj.selectNodeContents(div);
+  			var docFrangMent = rangeObj.cloneContents();
+  			div.appendChild(docFrangMent);
+  		}
+  	</script>
+    <div id="div">
+    	你好吗？
+    	<br/>
+    	<button onclick="cloneContent()">克隆</button>
+    	<br/>
+    </div>
+  </body>
+</html>

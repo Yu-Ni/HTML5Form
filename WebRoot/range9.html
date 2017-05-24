@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range9.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function testPlace(){
+  			var boldText=document.getElementById("boldTest");
+	  		var boldRange=document.createRange();
+	  		boldRange.selectNodeContents(boldText.firstChild);
+	  		var selection=document.getSelection();
+	  		if(selection.rangeCount>0){
+	  			var selRange=selection.getRangeAt(0);
+	  			if(selRange.compareBoundaryPoints(Range.START_TO_END,boldRange)<=0){
+	  				alert("选取的文字在粗体前面");
+	  			}else{
+	  				if(selRange.compareBoundaryPoints(Range.END_TO_START,boldRange)>=0){
+	  					alert("选取的文字在粗体后面");
+	  				}
+	  			}
+	  		}
+  		}
+  	</script>
+    这是一段文字，我也不<b id="boldTest">知道</b>写什么
+    <br/>
+    <button onclick="testPlace()">位置比较</button>
+  </body>
+</html>

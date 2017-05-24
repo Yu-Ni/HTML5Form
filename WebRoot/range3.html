@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range3.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function deleteChar(){
+  			var div = document.getElementById("myDiv");
+  			var textNode = div.firstChild;
+  			var rangeObj = document.createRange();
+  			rangeObj.setStart(textNode, 1);
+  			rangeObj.setEnd(textNode, 4);
+  			rangeObj.deleteContents();
+  		}
+  	</script>
+    <div id="myDiv" style="color:red;">
+    	这段文字是用来删除的
+    </div>
+    <button onclick="deleteChar()">删除文字</button>
+  </body>
+</html>

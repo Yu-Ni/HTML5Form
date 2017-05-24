@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script>
+  		function rangeTest(){
+  			var html;
+  			showRangeDiv = document.getElementById("showRange");
+  			selection = document.getSelection();
+  			if(selection.rangeCount>0){
+  				html = "你选取了>"+selection.rangeCount+"<"+"<内容<br/>";
+  				for(var i=0;i<selection.rangeCount;i++){
+  					var range=selection.getRangeAt(i);
+  					html+="第"+(i+1)+"段内容为："+range+"<br/>";
+  				}
+  				showRangeDiv.innerHTML = html;
+  			}
+  		}
+  	</script>
+    Selection对象与Range对象的使用
+    <input type="button" value="点击我" onclick="rangeTest()">
+    <div id="showRange"></div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range5.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function cloneRange(){
+  			var rangeObj = document.createRange();
+  			rangeObj.selectNodeContents(document.getElementById("p"))
+  			var rangeClone = rangeObj.cloneRange();
+  			alert(rangeClone.toString());
+  		}
+  	</script>
+    <p id="p">这里是随便书写的内容</p>
+    <button onclick="cloneRange()">克隆</button>
+  </body>
+</html>

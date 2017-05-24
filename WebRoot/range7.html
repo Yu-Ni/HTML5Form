@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>range7.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  	<script type="text/javascript">
+  		function moveContent(){
+  			var srcDiv=document.getElementById("srcDiv");
+  			var distDiv=document.getElementById("distDiv");
+  			var rangeObj=document.createRange();
+  			rangeObj.selectNodeContents(srcDiv);
+  			var docFrangment=rangeObj.extractContents();
+  			distDiv.appendChild(docFrangment);
+  		}
+  	</script>
+    <div id="srcDiv" style="background-color: gray;width: 300px;height: 50px">你好吗？</div>
+    <div id="distDiv" style="background-color: bisque;width: 300px;height: 50px"></div>
+    <button onclick="moveContent()">移动元素</button>
+  </body>
+</html>

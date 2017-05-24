@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>progress.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  <script type="text/javascript">
+  	function btn(){
+  		/* for(var i=0;i<100;i++){
+  			setTimeout(function() {
+  				updateprocess(i);
+  			}, 100)
+  		} */
+  		var i=0;
+  		function thread_one(){
+  			if(i<=100){
+  				i++;
+  				updateprocess(i);
+  			}
+  		}
+  		
+  		setInterval(thread_one, 100);
+  	}
+  	
+  	function updateprocess(newValue){
+  		var processBar = document.getElementById("p");
+  		processBar.value = newValue;
+  		processBar.getElementByTagName("span")[0].textContent = newValue;
+  	}
+  </script>
+    <section>
+    	<h2>process元素的使用</h2>
+    	<p>完成的百分比<progress id="p" max="100" style="background-color:gray;"><span>0</span>%</progress></p>
+    	<input type="button" onclick="btn()" value="点击">
+    </section>
+    
+    <!-- meter元素 -->
+    <meter value="40" min="0" max="100" low="10" high="90" optimum="80"></meter>
+  </body>
+</html>
